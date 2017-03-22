@@ -56,7 +56,6 @@ local_settings.py
 Include/
 Lib/
 Scripts/
-static/static/img/
 static/static-only/
 
 # Flask stuff:
