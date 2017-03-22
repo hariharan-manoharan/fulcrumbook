@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block profilecover %}
+<div class="row">
+    {% if request.user.is_authenticated %}
+    <div class="container profile">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well well-small clearfix">
+                    <div class="row-fluid">
+                        <div class="col-md-2">
+                            <img src="{% static 'img/2.jpg' %}"
+                                 class="img-responsive"/>
+                        </div>
+                        <div class="col-md-4">
+                            <h2>{{ user.username }}</h2>
+                            <ul class="unstyled">
+                                <li><span class="fa fa-phone"></span> 952-423-8952</li>
+                                <li><span class="fa fa-envelope"></span> {{ user.email }}</li>
+                                <li><span class="icon-globe"></span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2">
+                            <ul class="inline stats">
+                                <li>
+                                    <span>275</span>
+                                    Friends
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2">
+                            <ul class="inline stats">
+                                <li>
+                                    <span>354</span>
+                                    Followers
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2">
+                            <ul class="inline stats">
+                                <li>
+                                    <span>186</span>
+                                    Photos
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Body content-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% include 'profilenavbar.html'%}
+
+{% if template == 'userTimeline' %}
+{% include 'timeline.html'%}
+{% elif template == 'userGallery' %}
+{% include 'gallery.html'%}
+{% endif %}
+
+{% endblock %}
+

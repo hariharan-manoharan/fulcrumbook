@@ -1,0 +1,14 @@
+{% load staticfiles %}
+{% block gallery %}
+{% if request.user.is_authenticated %}
+</br>
+</br>
+<div class="row">
+    <div class="col-md-12 pull-right">
+        <div id="gallery" class="imgs-grid imgs-grid-5">
+
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
