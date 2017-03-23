@@ -25,11 +25,13 @@ from profiles import views as profiles_views
 from contact import views as contact_views
 
 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', profiles_views.home, name='home'),
     url(r'^about/$', profiles_views.about, name='about'),
     url(r'^profile/$', profiles_views.userProfile, name='profile'),
+    url(r'^profile/update$', profiles_views.userProfile_update, name='profile_update'),
     url(r'^timeline/$', profiles_views.userTimeline, name='timeline'),
     url(r'^gallery/$', profiles_views.userGallery, name='gallery'),
     url(r'^contact/$', contact_views.contact, name='contact'),

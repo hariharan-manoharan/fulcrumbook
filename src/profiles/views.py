@@ -1,5 +1,9 @@
+from django.shortcuts import render_to_response, render
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.contrib.auth.models import User
+from .forms import UserProfileForm
+
 
 # Create your views here.
 def home(request):
@@ -34,3 +38,22 @@ def userGallery(request):
 	context = {'user': user, 'template': 'userGallery'}
 	template = 'profile.html'
 	return render(request, template, context)
+
+@login_required
+def userProfile_update(request):
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=request.user.profile)
+
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/profile')
+
+    else:
+        user = request.user
+        profile = user.profile
+        form = UserProfileForm(instance=profile)
+
+    return render(request, 'updateProfile.html', context=locals())
+
+
+
