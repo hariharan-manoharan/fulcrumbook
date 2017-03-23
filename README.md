@@ -2,6 +2,6 @@
 
 Checkout
 
-Create a Virtual environment - ivrtualenv venv
+Create a Virtual environment - virtualenv venv
 
 pip install --upgrade -r requirements.txt
