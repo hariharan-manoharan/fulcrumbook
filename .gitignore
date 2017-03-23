@@ -57,6 +57,7 @@ Include/
 Lib/
 Scripts/
 static/static-only/
+src/db.sqlite3
 
 # Flask stuff:
 instance/
