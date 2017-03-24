@@ -58,6 +58,7 @@ Lib/
 Scripts/
 static/static-only/
 src/db.sqlite3
+static/media/avatar
 
 # Flask stuff:
 instance/
