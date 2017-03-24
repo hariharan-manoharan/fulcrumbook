@@ -57,7 +57,7 @@
          {% endif %}-->
     </div>
     <div class="col-md-4">
-        <!--<a href="#"><img src="{% static 'img/hari.jpg' %}" class="img-responsive img-rounded" width="304" height="236"/></a>-->
+        <a href="#"><img src="{{ MEDIA_URL }}{{ user.userprofile.avatar }}" class="img-responsive img-rounded" width="304" height="236"/></a>
     </div>
     <div class="col-md-4">
         {% if not request.user.is_authenticated %}
